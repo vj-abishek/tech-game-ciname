@@ -24,7 +24,6 @@ export default function Main() {
         >
           Download For Free
         </button>
-        <div className='col s6'>Please allow us to show adds.</div>
 
         <p className='col s12'>
           FiLMiC Pro v6 is the most advanced HD video recorder ever made, with a
