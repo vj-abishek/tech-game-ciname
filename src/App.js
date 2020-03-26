@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Navbar from './components/navbar'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Footer from './components/Footer'
+import FlimicPro from './components/FlimicApp'
+import Home from './components/Home/Home'
+import history from './components/services/history'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <Navbar />
+      <Router history={history}>
+        <Switch>
+          <Route exact path='/' title='TechGameCinema' component={Home} />
+          <Route
+            path='/FlimicPro'
+            title='Flimic Pro Free App'
+            component={FlimicPro}
+          />
+        </Switch>
+      </Router>
+      <Footer />
+    </main>
+  )
 }
 
-export default App;
+export default App
